@@ -1,0 +1,42 @@
+From e4b12c22d8c53988bc6e119953158f94c04ce70b Mon Sep 17 00:00:00 2001
+From: Stephen Segal <stephen.segal@spotai.co>
+Date: Tue, 7 Jan 2025 17:02:44 -0500
+Subject: [PATCH] Fix missing DT nodes for tegra-se
+
+The device-tree include for Orin NX/Nano seemed to be missing the
+nodes for the HW crypto engine (tegra-se) that are present for other
+Orin models.  This patch adds them back in.
+
+Upstream-Status: Pending
+
+Signed-off-by: Stephen Segal <stephen.segal@spotai.co>
+---
+ .../tegra234-p3768-0000+p3767-xxxx-nv-common.dtsi    | 12 ++++++++++++
+ 1 file changed, 12 insertions(+)
+
+diff --git a/hardware/nvidia/t23x/nv-public/nv-platform/tegra234-p3768-0000+p3767-xxxx-nv-common.dtsi b/hardware/nvidia/t23x/nv-public/nv-platform/tegra234-p3768-0000+p3767-xxxx-nv-common.dtsi
+index f2c048a..d8f01c7 100644
+--- a/hardware/nvidia/t23x/nv-public/nv-platform/tegra234-p3768-0000+p3767-xxxx-nv-common.dtsi
++++ b/hardware/nvidia/t23x/nv-public/nv-platform/tegra234-p3768-0000+p3767-xxxx-nv-common.dtsi
+@@ -303,6 +303,18 @@
+ 				status = "okay";
+ 			};
+ 
++			crypto@15810000 {
++				status = "okay";
++			};
++
++			crypto@15820000 {
++				status = "okay";
++			};
++
++			crypto@15840000 {
++				status = "okay";
++			};
++
+ 			nvdla0@15880000 {
+ 				status = "okay";
+ 			};
+-- 
+2.34.1
+

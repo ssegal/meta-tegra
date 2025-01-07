@@ -30,6 +30,7 @@ SRC_URI += "file://0001-Makefile-update-for-OE-builds.patch \
             file://0003-Fix-nvdisplay-conftest-gcc-14-compatibility-issues.patch \
             file://0004-tegra-virt-alt-Remove-leading-from-include-path-from.patch \
             file://0005-conftest-work-around-stringify-issue-with-__assign_s.patch \
+            file://0006-Fix-missing-DT-nodes-for-tegra-se.patch \
            "
 
 COMPATIBLE_MACHINE = "(tegra)"
